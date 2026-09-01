@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DeepGuard AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+<div style="min-height:100vh;background:radial-gradient(ellipse at 60% 40%,#0a1520 0%,#05070a 65%);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,transparent 30%,black 85%);pointer-events:none"></div>
+  <header style="position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px 40px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00e5ff,#0ea5e9);display:flex;align-items:center;justify-content:center;font-weight:800;color:#001018">DG</div>
+      <span style="font-weight:700;font-size:18px">DeepGuard<span style="color:var(--cyan)">AI</span></span>
+    </div>
+    <a class="btn btn-ghost" href="/login">OPERATOR LOGIN</a>
+  </header>
+  <main style="position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:40px 60px 80px;max-width:1200px;margin:0 auto;gap:40px;flex-wrap:wrap">
+    <div style="flex:1;min-width:280px;max-width:560px">
+      <div class="mono" style="font-size:12px;color:var(--cyan);margin-bottom:20px;display:flex;align-items:center;gap:10px">
+        <span class="status-dot" style="width:6px;height:6px"></span>MULTI-MODAL FORENSIC DETECTION
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-0.04em;margin-bottom:20px">AI can fake anything.<br/><span style="color:var(--cyan)">We prove what's real.</span></h1>
+      <p style="font-size:16px;color:var(--text-muted);line-height:1.6;margin-bottom:32px;max-width:480px">Forensic-grade multi-modal deepfake detection across webcam streams, video uploads, photos and audio. Verdict, artifact list and reasoning in under a second.</p>
+      <div style="display:flex;gap:12px;margin-bottom:48px;flex-wrap:wrap">
+        <a class="btn btn-primary" style="padding:14px 24px;font-size:14px" href="/login">DEPLOY CONSOLE →</a>
+        <a class="btn btn-ghost" style="padding:14px 24px" href="/login">READ DOSSIER</a>
+      </div>
+      <div style="display:flex;gap:40px;flex-wrap:wrap">
+        <div><div style="font-size:28px;font-weight:700">98.6%</div><div class="mono" style="font-size:10px;color:var(--text-dim);letter-spacing:.08em;margin-top:4px">DETECTION ACCURACY</div></div>
+        <div><div style="font-size:28px;font-weight:700">&lt;40ms</div><div class="mono" style="font-size:10px;color:var(--text-dim);letter-spacing:.08em;margin-top:4px">AVG LATENCY</div></div>
+        <div><div style="font-size:28px;font-weight:700">3-mode</div><div class="mono" style="font-size:10px;color:var(--text-dim);letter-spacing:.08em;margin-top:4px">MULTI-MODAL</div></div>
+      </div>
+    </div>
+    <div class="sphere-wrap" style="width:min(340px,80vw);height:min(340px,80vw);flex-shrink:0;margin:0 auto">
+      <div class="sphere" style="width:100%;height:100%"><svg viewBox="0 0 200 200">
+        <ellipse cx="100" cy="100" rx="90" ry="90" fill="none" stroke="#00e5ff" stroke-width=".8" opacity=".5"/>
+        <ellipse cx="100" cy="100" rx="90" ry="35" fill="none" stroke="#00e5ff" stroke-width=".6" opacity=".4"/>
+        <path d="M 10 100 Q 100 10 190 100 Q 100 190 10 100" fill="none" stroke="#ff3b5c" stroke-width=".55" opacity=".55"/>
+        <circle cx="100" cy="30" r="1.5" fill="#00e5ff"/><circle cx="160" cy="70" r="1.5" fill="#ff3b5c"/>
+      </svg></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

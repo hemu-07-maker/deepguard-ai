@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sign in — DeepGuard AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="card" style="width:100%;max-width:400px;padding:32px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+      <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00e5ff,#0ea5e9);display:flex;align-items:center;justify-content:center;font-weight:800;color:#001018">DG</div>
+      <div><div style="font-weight:700">DeepGuard<span style="color:var(--cyan)">AI</span></div><div class="mono" style="font-size:10px;color:var(--text-dim)">OPERATOR LOGIN</div></div>
+    </div>
+    <h1 style="font-size:22px;font-weight:700;margin-bottom:8px">Sign in</h1>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:24px">Email and password required to access the console.</p>
+    <form method="post" action="/login" style="display:flex;flex-direction:column;gap:14px">
+      <div>
+        <label class="mono" style="font-size:11px;color:var(--text-dim);display:block;margin-bottom:6px">EMAIL</label>
+        <input class="field" type="email" name="email" required placeholder="operator@deepguard.ai"/>
+      </div>
+      <div>
+        <label class="mono" style="font-size:11px;color:var(--text-dim);display:block;margin-bottom:6px">PASSWORD</label>
+        <input class="field" type="password" name="password" required minlength="6" placeholder="••••••••"/>
+      </div>
+      {% if error %}<p style="color:var(--red);font-size:13px">{{ error }}</p>{% endif %}
+      <button type="submit" class="btn btn-primary" style="justify-content:center;margin-top:8px">Sign in</button>
+    </form>
+    <p style="margin-top:20px;font-size:13px;color:var(--text-muted);text-align:center">
+      No account? <a href="/register">Create one</a>
+    </p>
+    <p style="margin-top:12px;text-align:center"><a href="/" style="font-size:12px;color:var(--text-dim)">← Back to home</a></p>
+  </div>
+</div>
+</body>
+</html>
