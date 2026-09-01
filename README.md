@@ -27,7 +27,7 @@ cd frontend
 npm install
 npm run dev
 ```
-Open http://localhost:3000
+https://deepguard-ai-4.vercel.app/
 
 **Backend (Python/FastAPI):**
 ```bash
