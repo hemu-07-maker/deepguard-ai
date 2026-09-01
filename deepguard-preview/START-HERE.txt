@@ -1,0 +1,9 @@
+DEEPGUARD PREVIEW — WITH EMAIL AUTH
+
+1. Double-click RUN.bat  OR  open index.html in browser
+2. Click OPERATOR LOGIN or DEPLOY CONSOLE
+3. Create account (email + password, min 6 chars)
+4. You enter the console; email shows in top bar
+5. LOGOUT returns to login
+
+Accounts are stored in THIS browser only (localStorage).
