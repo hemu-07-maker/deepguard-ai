@@ -80,3 +80,29 @@ def analyze(
         "fileType": file_type or mode,
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
+
+
+def batch_analyze(items: list[dict]) -> list[dict]:
+    """Analyze multiple media descriptors."""
+    return [
+        analyze(
+            file_name=it.get("file_name") or it.get("fileName") or "capture",
+            file_size=int(it.get("file_size") or it.get("fileSize") or 0),
+            file_type=it.get("file_type") or it.get("fileType") or "image/jpeg",
+            mode=it.get("mode") or "image",
+        )
+        for it in items
+    ]
+
+
+def summarize_verdicts(results: list[dict]) -> dict:
+    total = len(results)
+    if not total:
+        return {"total": 0, "fake": 0, "real": 0, "fake_ratio": 0.0}
+    fake = sum(1 for r in results if r.get("verdict") == "FAKE")
+    return {
+        "total": total,
+        "fake": fake,
+        "real": total - fake,
+        "fake_ratio": round(fake / total, 3),
+    }
