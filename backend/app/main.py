@@ -159,6 +159,44 @@ async def api_analyze(request: Request):
     return JSONResponse(result)
 
 
+@app.post("/api/analyze-file")
+async def api_analyze_file(request: Request, file: UploadFile = File(...)):
+    """Real image forensics: accepts an actual uploaded image and runs
+    NumPy/Pillow-based signal analysis instead of the metadata-only path."""
+    user = current_user(request)
+    if not user:
+        raise HTTPException(401, "Unauthorized")
+
+    image_bytes = await file.read()
+    result = analyze(
+        file_name=file.filename or "capture",
+        file_type=file.content_type or "image/jpeg",
+        mode="image",
+        image_bytes=image_bytes,
+    )
+
+    conn = get_conn()
+    conn.execute(
+        """INSERT INTO history
+           (user_id, file_name, verdict, confidence, mode, latency_ms, faces_detected, artifacts, reasoning)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (
+            user["id"],
+            result["fileName"],
+            result["verdict"],
+            result["confidence"],
+            result["mode"],
+            result["latencyMs"],
+            result["facesDetected"],
+            json.dumps(result["artifacts"]),
+            result["reasoning"],
+        ),
+    )
+    conn.commit()
+    conn.close()
+    return JSONResponse(result)
+
+
 @app.get("/api/history")
 def api_history(request: Request):
     user = current_user(request)

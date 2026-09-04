@@ -56,7 +56,7 @@ export default function LandingPage() {
             DeepGuard<span style={{ color: 'var(--cyan)' }}>AI</span>
           </span>
         </div>
-        <button className="btn btn-ghost" onClick={() => router.push('/console')}>
+        <button className="btn btn-ghost" onClick={() => router.push('/login')}>
           OPERATOR LOGIN
         </button>
       </header>
@@ -67,9 +67,6 @@ export default function LandingPage() {
           <div className="mono" style={{ fontSize: 12, color: 'var(--cyan)', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
             <span className="status-dot" style={{ width: 6, height: 6 }} />
             MULTI-MODAL FORENSIC DETECTION
-            <span style={{ color: 'var(--text-dim)', border: '1px solid var(--border)', padding: '2px 8px', borderRadius: 4, marginLeft: 4 }}>
-              CLAUDE SONNET 4.5
-            </span>
           </div>
 
           <h1 style={{ fontSize: 52, fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.04em', marginBottom: 20 }}>
@@ -84,10 +81,10 @@ export default function LandingPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, marginBottom: 48 }}>
-            <button className="btn btn-primary" style={{ padding: '14px 24px', fontSize: 14 }} onClick={() => router.push('/console')}>
+            <button className="btn btn-primary" style={{ padding: '14px 24px', fontSize: 14 }} onClick={() => router.push('/login')}>
               DEPLOY CONSOLE →
             </button>
-            <button className="btn btn-ghost" style={{ padding: '14px 24px' }} onClick={() => router.push('/console')}>
+            <button className="btn btn-ghost" style={{ padding: '14px 24px' }} onClick={() => router.push('/login')}>
               READ DOSSIER
             </button>
           </div>

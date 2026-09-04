@@ -1,6 +1,6 @@
 'use client';
 
-export default function StatusBar() {
+export default function StatusBar({ user, onLogout }) {
   const utc = new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
   return (
     <div
@@ -24,7 +24,30 @@ export default function StatusBar() {
           <span style={{ color: 'var(--cyan)' }}>TRACE ACTIVE</span>
         </span>
       </div>
-      <div style={{ color: 'var(--text-dim)' }}>{utc}</div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+        {user && (
+          <span style={{ color: 'var(--text-muted)' }}>
+            {user.email}
+            <button
+              onClick={onLogout}
+              style={{
+                marginLeft: 12,
+                background: 'transparent',
+                border: '1px solid var(--border-bright)',
+                color: 'var(--text-muted)',
+                borderRadius: 4,
+                padding: '2px 8px',
+                fontSize: 10,
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+              }}
+            >
+              LOGOUT
+            </button>
+          </span>
+        )}
+        <span style={{ color: 'var(--text-dim)' }}>{utc}</span>
+      </div>
     </div>
   );
 }
