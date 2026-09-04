@@ -1,3 +1,7 @@
-# Keep GitHub's language stats focused on the core Python/AIML backend.
-# The Next.js frontend is a companion UI, not the primary project.
+# Keep GitHub's language stats focused on the core Python/AIML backend
+# logic (app/, tests/) — not the companion Next.js UI or the backend's
+# view-layer templates/static assets, which are presentation boilerplate
+# rather than the project's substantive code.
 frontend/** linguist-vendored
+backend/templates/** linguist-vendored
+backend/static/** linguist-vendored
